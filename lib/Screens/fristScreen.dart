@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/Screens/sign_in.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Fristscreen extends StatefulWidget {
+  const Fristscreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Fristscreen> createState() => _FristscreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _FristscreenState extends State<Fristscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
