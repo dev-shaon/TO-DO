@@ -43,7 +43,7 @@ class _FristscreenState extends State<Fristscreen> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  minimumSize: Size(250, 40),
+                  minimumSize: Size(250, 50),
                   backgroundColor: Colors.blue
                 ),
                 onPressed: (){

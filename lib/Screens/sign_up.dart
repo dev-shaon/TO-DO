@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:to_do/Screens/Home_Screen.dart';
+import 'package:to_do/Screens/Botom_Home.dart';
 import 'package:to_do/Screens/sign_in.dart';
 
 class SignUp extends StatefulWidget {
@@ -79,7 +79,7 @@ class _SignUpState extends State<SignUp> {
                     foregroundColor: Colors.white,
                   ),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BotomHome()));
                   },
                   child: Text(
                     "Sign Up",

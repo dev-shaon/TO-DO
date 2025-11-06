@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:to_do/Screens/Home_Screen.dart';
+import 'package:to_do/Screens/Botom_Home.dart';
 import 'package:to_do/Screens/fristScreen.dart';
 import 'package:to_do/Screens/sign_up.dart';
 
@@ -88,7 +88,7 @@ class _SignInState extends State<SignIn> {
                     foregroundColor: Colors.white,
                   ),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BotomHome()));
                   },
                   child: Text("Login",style: TextStyle(
                   fontWeight: FontWeight.bold,
