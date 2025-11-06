@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:to_do/Screens/Home_Screen.dart';
-import 'package:to_do/Screens/fristScreen.dart';
 import 'package:to_do/Screens/sign_in.dart';
 
 class SignUp extends StatefulWidget {
