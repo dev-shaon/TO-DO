@@ -11,11 +11,7 @@ class HomeScreen extends StatelessWidget {
       {"icon": Icons.work, "label": "Work", "color": Colors.red},
       {"icon": Icons.person, "label": "Personal", "color": Colors.green},
       {"icon": Icons.school, "label": "Study", "color": Colors.orange},
-      {
-        "icon": Icons.fitness_center,
-        "label": "Fitness",
-        "color": Colors.purple,
-      },
+      {"icon": Icons.fitness_center,"label": "Fitness","color": Colors.purple,},
       {"icon": Icons.shopping_cart, "label": "Shopping", "color": Colors.teal},
       {"icon": Icons.travel_explore, "label": "Travel", "color": Colors.blue},
     ];
@@ -27,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           const SizedBox(height: 10),
 
-          // 🔹 Search bar
+          // Search bar
           TextField(
             decoration: InputDecoration(
               hintText: "Search",
@@ -39,14 +35,13 @@ class HomeScreen extends StatelessWidget {
 
           const SizedBox(height: 24),
 
-          // 🔹 Categories title
           const Text(
             "Categories",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           const SizedBox(height: 14),
 
-          // 🔹 Categories Grid
+          // Categories GridView
           SizedBox(
             height: 200,
             child: GridView.builder(
@@ -63,8 +58,8 @@ class HomeScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                      color: categories[index]["color"],
                       width: 2,
+                      color: categories[index]["color"],
                     ),
                   ),
                   child: Column(
@@ -88,7 +83,6 @@ class HomeScreen extends StatelessWidget {
 
           const SizedBox(height: 20),
 
-          // 🔹 Today's task header
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -108,11 +102,11 @@ class HomeScreen extends StatelessWidget {
 
           const SizedBox(height: 10),
 
-          // 🔹 Task list
+          //today Task list
           Expanded(
             child: ListView.separated(
               padding: const EdgeInsets.only(bottom: 16),
-              itemCount: 10, // যত খুশি
+              itemCount: 6,
               separatorBuilder: (_, __) => const SizedBox(height: 16),
               itemBuilder: (context, index) {
                 return Container(

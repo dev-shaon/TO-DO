@@ -34,15 +34,14 @@ class _BotomHomeState extends State<BotomHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF2F5F9),
+      backgroundColor:Color.fromARGB(221, 120, 120, 121),
 
-      // 🔹 Body changes based on bottomNavIndex
       body: SafeArea(child: screens[bottomNavIndex]),
 
       floatingActionButton: Transform.translate(
         offset: const Offset(0, 10),
         child: FloatingActionButton(
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: const Color.fromARGB(255, 22, 94, 218),
           onPressed: () {
             print("Floating Button Pressed");
           },
@@ -62,7 +61,7 @@ class _BotomHomeState extends State<BotomHome> {
           borderRadius: BorderRadius.circular(20),
           child: Material(
             elevation: 10,
-            color: Colors.black,
+            color: Colors.white70,
             child: SizedBox(
               height: 55,
               child: Row(
@@ -94,7 +93,7 @@ class _BotomHomeState extends State<BotomHome> {
       icon: Icon(
         icon,
         size: 30,
-        color: isSelected ? Colors.blueAccent : Colors.grey,
+        color: isSelected ? const Color.fromARGB(255, 22, 90, 206) : const Color.fromARGB(255, 105, 104, 104),
       ),
     );
   }
