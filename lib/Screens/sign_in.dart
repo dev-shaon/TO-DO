@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:to_do/Screens/Botom_Home.dart';
-import 'package:to_do/Screens/fristScreen.dart';
 import 'package:to_do/Screens/sign_up.dart';
 
 class SignIn extends StatefulWidget {
@@ -177,6 +176,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     onPressed: () {
                       print("Twitter Pressed");
+
                     },
                   ),
                 ],

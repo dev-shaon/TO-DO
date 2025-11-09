@@ -81,13 +81,13 @@ class _BotomHomeState extends State<BotomHome> {
     );
   }
 
-  // 🔹 Icon builder
+
   Widget _buildNavIcon(IconData icon, int index) {
     final isSelected = bottomNavIndex == index;
     return IconButton(
       onPressed: () {
         setState(() {
-          bottomNavIndex = index; // update screen
+          bottomNavIndex = index;
         });
       },
       icon: Icon(

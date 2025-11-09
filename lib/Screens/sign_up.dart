@@ -9,7 +9,6 @@ class SignUp extends StatefulWidget {
   @override
   State<SignUp> createState() => _SignUpState();
 }
-
 class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
@@ -62,7 +61,7 @@ class _SignUpState extends State<SignUp> {
               SizedBox(height: 20),
               Text("Password"),
               TextField(
-                obscureText: true, // hide password
+                obscureText: true,      ///////////////// hide password
                 decoration: InputDecoration(
                   hintText: "Enter your password",
                   border: OutlineInputBorder(
