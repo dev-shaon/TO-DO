@@ -34,7 +34,7 @@ class _BotomHomeState extends State<BotomHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Color.fromARGB(221, 120, 120, 121),
+      backgroundColor:Colors.white70,
 
       body: SafeArea(child: screens[bottomNavIndex]),
 
@@ -71,7 +71,7 @@ class _BotomHomeState extends State<BotomHome> {
                   _buildNavIcon(Icons.calendar_month, 1),
                   const SizedBox(width: 50), // FAB gap
                   _buildNavIcon(Icons.chat_bubble, 2),
-                  _buildNavIcon(Icons.settings, 3),
+                  _buildNavIcon(Icons.person, 3),
                 ],
               ),
             ),
