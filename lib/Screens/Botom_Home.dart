@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/Screens/Add_task.dart';
+import 'package:to_do/Screens/All_task.dart';
 import 'package:to_do/Screens/home_screen.dart';
 
 class BotomHome extends StatefulWidget {
@@ -21,9 +22,7 @@ class _BotomHomeState extends State<BotomHome> {
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
       ),
     ),
-    Center(
-     
-    ),
+    AllTask(),
     Center(
       child: Text(
         "Settings Screen",
