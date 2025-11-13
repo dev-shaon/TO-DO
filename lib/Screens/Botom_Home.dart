@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do/Screens/Add_task.dart';
 import 'package:to_do/Screens/home_screen.dart';
 
 class BotomHome extends StatefulWidget {
@@ -43,7 +44,7 @@ class _BotomHomeState extends State<BotomHome> {
         child: FloatingActionButton(
           backgroundColor: const Color.fromARGB(255, 22, 94, 218),
           onPressed: () {
-            print("Floating Button Pressed");
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>AddTask()));
           },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
@@ -70,7 +71,7 @@ class _BotomHomeState extends State<BotomHome> {
                   _buildNavIcon(Icons.home, 0),
                   _buildNavIcon(Icons.calendar_month, 1),
                   const SizedBox(width: 50), // FAB gap
-                  _buildNavIcon(Icons.chat_bubble, 2),
+                  _buildNavIcon(Icons.assignment, 2),
                   _buildNavIcon(Icons.person, 3),
                 ],
               ),
