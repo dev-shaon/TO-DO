@@ -16,19 +16,11 @@ class _BotomHomeState extends State<BotomHome> {
 
   final List<Widget> screens = [
    HomeScreen(title: '',),
-    Center(
-      child: Text(
-        "Calendar Screen",
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-      ),
-    ),
+    
+    const Center(child: Text("Assignments Screen")),
     AllTask(),
-    Center(
-      child: Text(
-        "Settings Screen",
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-      ),
-    ),
+    const Center(child: Text("Profile Screen")),
+    
   ];
 
   @override
@@ -39,6 +31,7 @@ class _BotomHomeState extends State<BotomHome> {
       body: SafeArea(child: screens[bottomNavIndex]),
 
       floatingActionButton: Transform.translate(
+        
         offset: const Offset(0, 10),
         child: FloatingActionButton(
           backgroundColor: const Color.fromARGB(255, 22, 94, 218),

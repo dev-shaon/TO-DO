@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/Screens/All_task.dart';
+import 'package:to_do/Screens/db_helper.dart';
+import 'package:to_do/Screens/model.dart';
 
 class AddTask extends StatefulWidget {
   const AddTask({super.key});
@@ -12,7 +13,9 @@ class _AddTaskState extends State<AddTask> {
   DateTime? selectedDate;
   TimeOfDay? selectedTime;
 
-  // Function to pick date
+  final titleController = TextEditingController();
+  final notesController = TextEditingController();
+
   Future<void> _pickDate() async {
     final DateTime? picked = await showDatePicker(
       context: context,
@@ -27,7 +30,6 @@ class _AddTaskState extends State<AddTask> {
     }
   }
 
-  // Function to pick time
   Future<void> _pickTime() async {
     final TimeOfDay? picked = await showTimePicker(
       context: context,
@@ -38,6 +40,15 @@ class _AddTaskState extends State<AddTask> {
         selectedTime = picked;
       });
     }
+  }
+
+  void _showSnackBar(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        duration: const Duration(seconds: 2),
+      ),
+    );
   }
 
   @override
@@ -68,7 +79,10 @@ class _AddTaskState extends State<AddTask> {
                   ),
                 ),
                 const SizedBox(height: 6),
+
+                // Title Input
                 TextField(
+                  controller: titleController,
                   decoration: InputDecoration(
                     hintText: "Enter your task title",
                     border: OutlineInputBorder(
@@ -76,6 +90,7 @@ class _AddTaskState extends State<AddTask> {
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 10),
                 const Text(
                   "Category",
@@ -86,6 +101,8 @@ class _AddTaskState extends State<AddTask> {
                   ),
                 ),
                 const SizedBox(height: 6),
+
+                // Category UI
                 Container(
                   height: 50,
                   width: double.infinity,
@@ -114,6 +131,7 @@ class _AddTaskState extends State<AddTask> {
                     ],
                   ),
                 ),
+
                 const SizedBox(height: 10),
                 const Text(
                   "Date & Time",
@@ -124,6 +142,7 @@ class _AddTaskState extends State<AddTask> {
                   ),
                 ),
                 const SizedBox(height: 8),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -163,8 +182,8 @@ class _AddTaskState extends State<AddTask> {
                           selectedTime == null
                               ? "Select Time"
                               : selectedTime!.format(context),
-                          style: TextStyle(
-                            color: const Color.fromARGB(255, 8, 136, 240),
+                          style: const TextStyle(
+                            color: Color.fromARGB(255, 8, 136, 240),
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                           ),
@@ -173,6 +192,7 @@ class _AddTaskState extends State<AddTask> {
                     ),
                   ],
                 ),
+
                 const SizedBox(height: 16),
                 const Text(
                   "Notes",
@@ -183,7 +203,10 @@ class _AddTaskState extends State<AddTask> {
                   ),
                 ),
                 const SizedBox(height: 8),
+
+                // Notes Input
                 TextField(
+                  controller: notesController,
                   decoration: InputDecoration(
                     hintText: "Enter your notes here.",
                     contentPadding: const EdgeInsets.symmetric(
@@ -195,15 +218,38 @@ class _AddTaskState extends State<AddTask> {
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 30),
+
+                // SAVE BUTTON
                 Center(
                   child: IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => AllTask()),
+                    onPressed: () async {
+                      // 🚨 Null Safety এবং খালি Title চেক করা হচ্ছে
+                      if (titleController.text.trim().isEmpty) {
+                        _showSnackBar("Please enter a task title.");
+                        return;
+                      }
+                      
+                      if (selectedDate == null || selectedTime == null) {
+                        _showSnackBar("Please select both Date and Time.");
+                        return;
+                      }
+                      
+                      final task = TaskModel(
+                        title: titleController.text.trim(),
+                        notes: notesController.text.trim(),
+                        date: selectedDate!, 
+                        time: "${selectedTime!.hour}:${selectedTime!.minute}", 
+                        category: '',
                       );
+
+                      await DBHelper.instance.insertTask(task);
+
+                      // Go back and signal that a task was added
+                      Navigator.pop(context, true);
                     },
+
                     icon: const Icon(
                       Icons.check_circle,
                       size: 70,

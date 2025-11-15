@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/Screens/fristScreen.dart';
 
-
 void main() {
   runApp( MyApp());
 }
