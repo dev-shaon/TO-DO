@@ -5,6 +5,7 @@ class TaskModel {
   DateTime date;
   String time;
   String notes;
+  int isCompleted;
 
   TaskModel({
     this.id,
@@ -13,6 +14,7 @@ class TaskModel {
     required this.date,
     required this.time,
     required this.notes,
+    this.isCompleted = 0,
   });
 
   Map<String, dynamic> toMap() {
@@ -23,6 +25,7 @@ class TaskModel {
       "date": date.toIso8601String(),
       "time": time,
       "notes": notes,
+      "isCompleted": isCompleted,
     };
   }
 
@@ -34,6 +37,7 @@ class TaskModel {
       date: DateTime.parse(map["date"]),
       time: map["time"],
       notes: map["notes"],
+      isCompleted: map["isCompleted"] ?? 0,
     );
   }
 }

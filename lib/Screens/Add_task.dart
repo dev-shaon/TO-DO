@@ -3,7 +3,7 @@ import 'package:to_do/Screens/db_helper.dart';
 import 'package:to_do/Screens/model.dart';
 
 class AddTask extends StatefulWidget {
-  const AddTask({super.key});
+  const AddTask({super.key,});
 
   @override
   State<AddTask> createState() => _AddTaskState();
@@ -44,10 +44,7 @@ class _AddTaskState extends State<AddTask> {
 
   void _showSnackBar(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: const Duration(seconds: 2),
-      ),
+      SnackBar(content: Text(message), duration: const Duration(seconds: 2)),
     );
   }
 
@@ -60,7 +57,7 @@ class _AddTaskState extends State<AddTask> {
           "Add task",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme:  IconThemeData(color: Colors.white),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -225,29 +222,28 @@ class _AddTaskState extends State<AddTask> {
                 Center(
                   child: IconButton(
                     onPressed: () async {
-                      // 🚨 Null Safety এবং খালি Title চেক করা হচ্ছে
                       if (titleController.text.trim().isEmpty) {
                         _showSnackBar("Please enter a task title.");
                         return;
                       }
-                      
+
                       if (selectedDate == null || selectedTime == null) {
                         _showSnackBar("Please select both Date and Time.");
                         return;
                       }
-                      
+
                       final task = TaskModel(
                         title: titleController.text.trim(),
+                        category: "Work",
+                        date: selectedDate!,
+                        time: "${selectedTime!.hour}:${selectedTime!.minute}",
                         notes: notesController.text.trim(),
-                        date: selectedDate!, 
-                        time: "${selectedTime!.hour}:${selectedTime!.minute}", 
-                        category: '',
+                        isCompleted: 0,
                       );
 
                       await DBHelper.instance.insertTask(task);
 
-                      // Go back and signal that a task was added
-                      Navigator.pop(context, true);
+                      Navigator.pop(context);
                     },
 
                     icon: const Icon(

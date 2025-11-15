@@ -15,7 +15,7 @@ class _BotomHomeState extends State<BotomHome> {
 
 
   final List<Widget> screens = [
-   HomeScreen(title: '',),
+   HomeScreen(title: "",),
     
     const Center(child: Text("Assignments Screen")),
     AllTask(),
@@ -26,7 +26,7 @@ class _BotomHomeState extends State<BotomHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Colors.white70,
+      backgroundColor:Colors.white,
 
       body: SafeArea(child: screens[bottomNavIndex]),
 
@@ -73,7 +73,6 @@ class _BotomHomeState extends State<BotomHome> {
       ),
     );
   }
-
 
   Widget _buildNavIcon(IconData icon, int index) {
     final isSelected = bottomNavIndex == index;

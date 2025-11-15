@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/Screens/fristScreen.dart';
 
-void main() {
-  runApp( MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,8 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    debugShowCheckedModeBanner: false,
-      home:Fristscreen(),
+      debugShowCheckedModeBanner: false,
+      home: Fristscreen(),
     );
   }
 }

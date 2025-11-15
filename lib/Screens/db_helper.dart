@@ -3,7 +3,7 @@ import 'package:path/path.dart';
 import 'package:to_do/Screens/model.dart';
 
 class DBHelper {
-  // Singleton Pattern ------------------------------------
+  // Singleton Pattern------------------------------------
   static final DBHelper instance = DBHelper._internal();
   factory DBHelper() => instance;
   DBHelper._internal();
@@ -12,7 +12,7 @@ class DBHelper {
 
   static const String TABLE = "todos";
 
-  // Get Database ----------------------------------------
+  // Get Database----------------------------------------
   Future<Database> get database async {
     if (_database != null) return _database!;
     _database = await initDB();
