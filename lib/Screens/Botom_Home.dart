@@ -62,7 +62,7 @@ class _BotomHomeState extends State<BotomHome> {
                 children: [
                   _buildNavIcon(Icons.home, 0),
                   _buildNavIcon(Icons.calendar_month, 1),
-                  const SizedBox(width: 50), // FAB gap
+                  const SizedBox(width: 50), 
                   _buildNavIcon(Icons.assignment, 2),
                   _buildNavIcon(Icons.person, 3),
                 ],

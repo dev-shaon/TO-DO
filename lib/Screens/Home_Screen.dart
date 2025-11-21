@@ -23,7 +23,6 @@ class HomeScreen extends StatelessWidget {
         children: [
           const SizedBox(height: 10),
 
-          // Search bar
           TextField(
             decoration: InputDecoration(
               hintText: "Search",
@@ -41,7 +40,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 14),
 
-          // Categories GridView
+          ////// Categories GridView
           SizedBox(
             height: 200,
             child: GridView.builder(
