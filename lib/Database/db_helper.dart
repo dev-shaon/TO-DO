@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'package:to_do/Screens/model.dart';
+import 'package:to_do/Model/model.dart';
 
 class DBHelper {
   // Singleton Pattern------------------------------------

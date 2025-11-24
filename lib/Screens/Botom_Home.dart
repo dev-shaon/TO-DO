@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/Screens/Add_task.dart';
 import 'package:to_do/Screens/All_task.dart';
+import 'package:to_do/Screens/Profile_Screen.dart';
 import 'package:to_do/Screens/home_screen.dart';
 
 class BotomHome extends StatefulWidget {
@@ -19,7 +20,7 @@ class _BotomHomeState extends State<BotomHome> {
     
     const Center(child: Text("Assignments Screen")),
     AllTask(),
-    const Center(child: Text("Profile Screen")),
+    ProfileScreen(),
     
   ];
 

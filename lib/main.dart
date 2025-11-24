@@ -4,11 +4,11 @@ import 'package:to_do/Screens/fristScreen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(MyApp());
+  runApp(ToDo());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ToDo extends StatelessWidget {
+  const ToDo({super.key});
 
   @override
   Widget build(BuildContext context) {

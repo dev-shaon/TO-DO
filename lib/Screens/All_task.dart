@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/Screens/db_helper.dart';
-import 'package:to_do/Screens/model.dart';
+import 'package:to_do/Database/db_helper.dart';
+import 'package:to_do/Model/model.dart';
 
 class AllTask extends StatefulWidget {
   const AllTask({super.key});
