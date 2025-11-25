@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/Screens/Add_task.dart';
-import 'package:to_do/Screens/All_task.dart';
-import 'package:to_do/Screens/Profile_Screen.dart';
+import 'package:to_do/Screens/Task%20Screen/Add_task.dart';
+import 'package:to_do/Screens/Task%20Screen/All_task.dart';
+import 'package:to_do/Screens/Profile%20Screen/Profile_Screen.dart';
 import 'package:to_do/Screens/home_screen.dart';
 
 class BotomHome extends StatefulWidget {

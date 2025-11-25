@@ -78,7 +78,7 @@ class _SignUpState extends State<SignUp> {
                     foregroundColor: Colors.white,
                   ),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BotomHome()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>BotomHome()));
                   },
                   child: Text(
                     "Sign Up",

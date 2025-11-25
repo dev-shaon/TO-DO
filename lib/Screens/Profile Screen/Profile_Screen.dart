@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do/Screens/sign_in.dart';
 import 'package:to_do/Wigets/Profile_wigets.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -65,7 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
-                            Icons.edit,
+                            Icons.filter,
                             color: Colors.white,
                             size: 18,
                           ),
@@ -107,7 +108,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+                  },
                   label: const Text(
                     "Logout",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

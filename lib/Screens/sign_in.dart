@@ -87,7 +87,7 @@ class _SignInState extends State<SignIn> {
                     foregroundColor: Colors.white,
                   ),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BotomHome()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>BotomHome()));
                   },
                   child: Text("Login",style: TextStyle(
                   fontWeight: FontWeight.bold,
