@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:to_do/Screens/Profile%20Screen/Change_pass.dart';
+import 'package:to_do/Screens/Profile%20Screen/Notification.dart';
+import 'package:to_do/Screens/Profile%20Screen/Changee_Username.dart';
 import 'package:to_do/Screens/sign_in.dart';
 import 'package:to_do/Wigets/Profile_wigets.dart';
 
@@ -91,9 +94,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               const SizedBox(height: 30),
 
-              ProfileItem(title: "Change Username"),
-              ProfileItem(title: "Change Password"),
-              ProfileItem(title: "Notification"),
+              ProfileItem(
+                title: "Change Username",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChangeeUsername()),
+                  );
+                },
+              ),
+              ProfileItem(
+                title: "Change Password",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChangePass()),
+                  );
+                },
+              ),
+              ProfileItem(
+                title: "Notification",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NotificationScreen()),
+                  );
+                },
+              ),
 
               const SizedBox(height: 30),
 
@@ -109,7 +136,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignIn()),
+                    );
                   },
                   label: const Text(
                     "Logout",
