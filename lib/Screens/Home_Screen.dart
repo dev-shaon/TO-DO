@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do/Screens/All_task.dart';
 
 class HomeScreen extends StatelessWidget {
   final String title;
@@ -90,7 +91,9 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AllTask()));
+                },
                 child: const Text(
                   "See all",
                   style: TextStyle(color: Colors.blue),
