@@ -17,7 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: const Color.fromARGB(255, 10, 67, 165),
         title: Text(
           "Your Profile",
           style: TextStyle(
@@ -80,19 +80,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
 
-              const SizedBox(height: 20),
+               SizedBox(height: 20),
 
-              const Text(
+               Text(
                 "SHAON DAS",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
               ),
 
-              const Text(
+               Text(
                 "shaondas22@gmail.com",
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
 
-              const SizedBox(height: 30),
+               SizedBox(height: 30),
 
               ProfileItem(
                 title: "Change Username",
@@ -122,14 +122,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 },
               ),
 
-              const SizedBox(height: 30),
+               SizedBox(height: 30),
 
               SizedBox(
                 width: 170,
                 child: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
-                    backgroundColor: Colors.blueAccent,
+                    backgroundColor: const Color.fromARGB(255, 3, 77, 204),
                     padding: EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -141,11 +141,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       MaterialPageRoute(builder: (context) => SignIn()),
                     );
                   },
-                  label: const Text(
+                  label:  Text(
                     "Logout",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  icon: const Icon(Icons.logout),
+                  icon:  Icon(Icons.logout),
                 ),
               ),
             ],
