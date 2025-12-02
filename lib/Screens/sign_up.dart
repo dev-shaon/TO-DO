@@ -95,7 +95,7 @@ class _SignUpState extends State<SignUp> {
                   Text("Already a user?"),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (context) => SignIn()),
                       );
